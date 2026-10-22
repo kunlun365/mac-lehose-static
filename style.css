@@ -1,0 +1,327 @@
+:root {
+    --bg: #ffffff;
+    --ink: #28312c;
+    --muted: #78827c;
+    --green: #8bbd9c;
+    --green-dark: #47785b;
+    --line: #d6e0d8;
+    --red: #c94e4e;
+    --lightred: lightcoral;
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        "PingFang SC", "Microsoft YaHei", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.page {
+    /* 宽屏时封顶960px；窄屏时是"屏宽减20px"，即左右各留10px间隙 */
+    width: min(960px, calc(100% - 20px));
+    margin: 0 auto;
+    /* 上 左右 下 */
+    padding: 20px 0 20px;
+}
+
+.page-title {
+    margin: 0 0 12px;
+    padding: 0;
+    line-height: 1.4;
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--ink);
+}
+
+.gallery-entry {
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+    margin: 16px 8px 0;
+}
+
+.gallery-entry a {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    text-decoration: none;
+    color: orange;
+    font-weight: bold;
+    margin-left: auto;
+}
+
+.gallery-entry img {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.gallery-entry a span {
+    line-height: 1;
+    transform: translateY(-1.5px);
+}
+
+.plan-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 8px;
+    border-radius: 6px;
+    background: orange;
+    line-height: 1;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, .08);
+}
+
+.plan-name {
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    font-size: 16px;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+}
+
+/* 行程卡片 */
+.trip-card {
+    min-width: 0;
+    margin: 6px 0;
+    padding: 2px 2px;
+    border: 1px solid #d7e2da;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 6px 20px rgba(29, 48, 37, .045);
+}
+
+/* 把每组第一个卡片上移，抵消legend占掉的高度，视觉上和橙色标题贴紧 */
+section .trip-card:first-of-type {
+    margin-top: -12px;
+}
+
+.trip-legend {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    min-width: 0;
+    margin: 0 12px;
+    padding: 0 6px;
+    border: 0;
+    line-height: 1;
+}
+
+/* 去程 */
+.direction {
+    display: inline-block;
+    padding: 5px 7px;
+    border-radius: 8px;
+    background: var(--green);
+    color: white;
+    font-size: 12px;
+    font-weight: 750;
+}
+
+/* 返程 */
+.direction2 {
+    display: inline-block;
+    padding: 5px 7px;
+    border-radius: 8px;
+    background: var(--lightred);
+    color: white;
+    font-size: 12px;
+    font-weight: 750;
+}
+
+/* 价格文字：透明背景 */
+.total-price {
+    color: var(--red);
+    font-size: 13px;
+    font-weight: 800;
+    background: transparent;
+    font-variant-numeric: tabular-nums;
+}
+
+/* 时长文字：透明背景 */
+.duration {
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 700;
+    background: transparent;
+}
+
+.leg {
+    display: grid;
+    grid-template-columns: 20px minmax(0, 1fr);
+    align-items: center;
+    gap: 2px;
+    padding: 4px 8px;
+}
+
+/* +是相邻兄弟选择器：只有"紧跟在另一个.leg后面的.leg才加border-top，第一行不会有顶部线 */
+.leg+.leg {
+    border-top: 1px solid #edf1ee;
+}
+
+/* 数字圆圈 */
+.leg-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #a5ada8;
+    color: white;
+    font-size: 10px;
+    line-height: 1;
+    white-space: nowrap;
+    box-sizing: border-box;
+    padding: 0;
+    text-align: center;
+}
+
+/* 起点 | 中间路线信息 | 终点 */
+.route-flow {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 3fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 1px;
+    min-width: 0;
+}
+
+/* 出发/到达 */
+.route-point {
+    min-width: 0;
+    font-size: 14px;
+    font-weight: 750;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.route-point.start {
+    text-align: center;
+}
+
+.route-point.end {
+    text-align: center;
+}
+
+/* 中间路线信息内部又是一个网格 */
+.route-track {
+    display: grid;
+    grid-template-rows: auto 1px auto;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    min-width: 0;
+    line-height: 1.35;
+}
+
+/* 路线信息第一行：专线小巴(9A) · $12.8/成人 */
+.track-fare {
+    grid-row: 1;
+    padding-bottom: 2px;
+    color: var(--green-dark);
+    font-size: 12px;
+    font-weight: 800;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+    text-align: center;
+}
+
+/* 路线信息第二行：线 */
+.route-line {
+    grid-row: 2;
+    position: relative;
+    height: 1px;
+    width: 95%;
+    min-width: 160px;
+    max-width: 220px;
+    background: #bdcfc1;
+    justify-self: center;
+}
+
+/* 路线信息：箭头 */
+.route-line::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 5px;
+    height: 5px;
+    border-top: 1px solid #91aa98;
+    border-right: 1px solid #91aa98;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+/* 路线信息第三行：2个中途站 · 约20分钟 */
+.track-note {
+    grid-row: 3;
+    padding-top: 2px;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: bolder;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.intro {
+    margin-bottom: 52px;
+}
+
+.tips {
+    margin-bottom: 2px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.notice {
+    margin: 0;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.notice a {
+    overflow-wrap: anywhere;
+    color: var(--muted);
+    word-break: break-all;
+}
+
+/* 页面加载 loading 遮罩 */
+.page-loading {
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, .8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.page-loading.show {
+    display: flex;
+}
+
+/* 转圈动画 */
+.page-loading .spinner {
+    width: 36px;
+    height: 36px;
+    border: 3px solid #ddd;
+    border-top-color: orange;
+    border-radius: 50%;
+    animation: spin .8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

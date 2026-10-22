@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>沿途实拍</title>
+    <link rel="stylesheet" href="gallery.css?v=202610222100">
+</head>
+
+<body>
+    <!-- 顶部居左固定返回区 -->
+    <div class="back-bar">
+        <a href="index.html">
+            <img src="static/out.png">
+            <span>返回</span>
+        </a>
+        <span class="photo-count" id="photo-count"></span>
+    </div>
+
+    <!-- 画廊 grid -->
+    <div class="gallery-grid">
+        <div class="gallery-item" data-img="static/7.jpg" loading="lazy">
+            <img class="thumb" src="static/7.jpg">
+            <div class="title-bar">麦理浩径第一段总览</div>
+            <div class="tag-bar">
+                <span class="tag-left">西贡区</span>
+                <span class="tag-right">北潭涌至浪茄湾</span>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-img="static/1.jpg" loading="lazy">
+            <img class="thumb" src="static/1.jpg">
+            <div class="title-bar">海蚀洞</div>
+            <div class="tag-bar">
+                <span class="tag-left">西贡区</span>
+                <span class="tag-right">萬宜地質步道 - 东坝段</span>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-img="static/2.jpg" loading="lazy">
+            <img class="thumb" src="static/2.jpg">
+            <div class="title-bar">海蚀洞</div>
+            <div class="tag-bar">
+                <span class="tag-left">西贡区</span>
+                <span class="tag-right">萬宜地質步道 - 东坝段</span>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-img="static/3.jpg" loading="lazy">
+            <img class="thumb" src="static/3.jpg">
+            <div class="title-bar">破边洲入口</div>
+            <div class="tag-bar">
+                <span class="tag-left">西贡区</span>
+                <span class="tag-right">萬宜地質步道 - 破边洲</span>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-img="static/4.jpg" loading="lazy">
+            <img class="thumb" src="static/4.jpg">
+            <div class="title-bar">往破边洲观景台的山路</div>
+            <div class="tag-bar">
+                <span class="tag-left">西贡区</span>
+                <span class="tag-right">萬宜地質步道 - 破边洲</span>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-img="static/5.jpg" loading="lazy">
+            <img class="thumb" src="static/5.jpg">
+            <div class="title-bar">破边洲眺望捡猪湾</div>
+            <div class="tag-bar">
+                <span class="tag-left">西贡区</span>
+                <span class="tag-right">萬宜地質步道 - 破边洲</span>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-img="static/6.jpg" loading="lazy">
+            <img class="thumb" src="static/6.jpg">
+            <div class="title-bar">破边洲六角火山岩柱</div>
+            <div class="tag-bar">
+                <span class="tag-left">西贡区</span>
+                <span class="tag-right">萬宜地質步道 - 破边洲</span>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-img="static/8.jpg" loading="lazy">
+            <img class="thumb" src="static/8.jpg">
+            <div class="title-bar">浪茄湾</div>
+            <div class="tag-bar">
+                <span class="tag-left">西贡区</span>
+                <span class="tag-right">麦径一段</span>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-img="static/10.jpg" loading="lazy">
+            <img class="thumb" src="static/10.jpg">
+            <div class="title-bar">浪茄湾</div>
+            <div class="tag-bar">
+                <span class="tag-left">西贡区</span>
+                <span class="tag-right">麦径一段</span>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-img="static/11.jpg" loading="lazy">
+            <img class="thumb" src="static/11.jpg">
+            <div class="title-bar">浪茄湾</div>
+            <div class="tag-bar">
+                <span class="tag-left">西贡区</span>
+                <span class="tag-right">麦径一段</span>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-img="static/9.jpg" loading="lazy">
+            <img class="thumb" src="static/9.jpg">
+            <div class="title-bar">麦理浩径第二段总览</div>
+            <div class="tag-bar">
+                <span class="tag-left">西贡区</span>
+                <span class="tag-right">浪茄至北潭凹</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="lightbox" id="lightbox">
+        <img id="lightbox-img" src="">
+    </div>
+
+    <div class="page-loading" id="page-loading">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="gallery.js?v=202610222100"></script>
+</body>
+
+</html>
