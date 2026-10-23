@@ -270,7 +270,6 @@ section .trip-card:first-of-type {
     padding-top: 2px;
     color: var(--muted);
     font-size: 12px;
-    font-weight: bolder;
     text-align: center;
     white-space: nowrap;
 }
