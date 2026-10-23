@@ -87,7 +87,7 @@ body {
     font-size: 16px;
     color: white;
     font-weight: 700;
-    letter-spacing: 0.7px;
+    letter-spacing: 1.2px;
 }
 
 /* 行程卡片 */
@@ -127,6 +127,7 @@ section .trip-card:first-of-type {
     color: white;
     font-size: 12px;
     font-weight: 750;
+    letter-spacing: 0.8px;
 }
 
 /* 返程 */
@@ -138,6 +139,7 @@ section .trip-card:first-of-type {
     color: white;
     font-size: 12px;
     font-weight: 750;
+    letter-spacing: 0.8px;
 }
 
 /* 价格文字：透明背景 */
